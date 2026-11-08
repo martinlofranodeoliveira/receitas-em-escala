@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T09:45:13.206976Z",
+  "title": "Design System: Receitas em Escala",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Azul de ação"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta da ficha"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto de apoio"
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Bancada fria"
+      },
+      "cold": {
+        "role": "neutral",
+        "displayName": "Papel frio"
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Branco da ficha"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Linha estrutural"
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Contorno de campo"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Abertura",
+        "purpose": "Título de boas-vindas do livro vazio."
+      },
+      "headline": {
+        "displayName": "Título da ficha",
+        "purpose": "Nomes de receita e títulos de página, com quebra de conteúdo extenso."
+      },
+      "title": {
+        "displayName": "Título de seção",
+        "purpose": "Seções de trabalho compactas."
+      },
+      "body": {
+        "displayName": "Texto de trabalho",
+        "purpose": "Leitura geral com Public Sans local."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Identificação explícita de controles."
+      },
+      "quantity": {
+        "displayName": "Quantidade",
+        "purpose": "Valor tabular em destaque, separado da unidade."
+      },
+      "unit": {
+        "displayName": "Unidade",
+        "purpose": "Medida explícita em largura reservada."
+      }
+    },
+    "shadows": [
+      {
+        "name": "confirmation-dialog",
+        "value": "0 18px 70px #172a4330",
+        "purpose": "Única sombra com profundidade declarada; separa a confirmação modal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "background-color 150ms ease-out",
+        "purpose": "Passagem dos botões preenchidos."
+      },
+      {
+        "name": "quantity-change",
+        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Realce e desfoque transitórios do número recalculado; removidos com movimento reduzido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1550px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1180px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "860px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal preenchida; exemplo da criação de uma receita.",
+      "html": "<button class=\"ds-button ds-primary\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\" /></svg>Nova receita</button>",
+      "css": ".ds-button, .ds-text-button, .ds-icon-button { cursor: pointer; } .ds-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-button { padding: 11px 17px; border-radius: 4px; font-size: 13.5px; transition: background-color 150ms ease-out; } .ds-button.ds-primary { background: var(--blue, #154daa); color: white; } .ds-button.ds-primary:hover:not(:disabled) { background: #103d87; } .ds-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-button:disabled { cursor: not-allowed; opacity: 0.48; } @media (prefers-reduced-motion: reduce) { .ds-button { animation: none !important; transition: none !important; scroll-behavior: auto !important; } } .ds-button svg { flex-shrink: 0; vertical-align: middle; }"
+    },
+    {
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação de apoio com preenchimento claro; exemplo de cancelamento.",
+      "html": "<button class=\"ds-button ds-secondary\" type=\"button\">Cancelar</button>",
+      "css": ".ds-button, .ds-text-button, .ds-icon-button { cursor: pointer; } .ds-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-button { padding: 11px 17px; border-radius: 4px; font-size: 13.5px; transition: background-color 150ms ease-out; } .ds-button.ds-secondary { background: #eaf0f9; color: #17437e; } .ds-button.ds-secondary:hover:not(:disabled) { background: #dce8f8; } .ds-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-button:disabled { cursor: not-allowed; opacity: 0.48; } @media (prefers-reduced-motion: reduce) { .ds-button { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }"
+    },
+    {
+      "name": "Botão de perigo",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Confirmação explícita de uma substituição ou exclusão.",
+      "html": "<button class=\"ds-button ds-danger\" type=\"button\">Confirmar substituição</button>",
+      "css": ".ds-button, .ds-text-button, .ds-icon-button { cursor: pointer; } .ds-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-button { padding: 11px 17px; border-radius: 4px; font-size: 13.5px; transition: background-color 150ms ease-out; } .ds-button.ds-danger { background: var(--danger, #a62e27); color: white; } .ds-button.ds-danger:hover { background: #87241f; } .ds-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-button:disabled { cursor: not-allowed; opacity: 0.48; } @media (prefers-reduced-motion: reduce) { .ds-button { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }"
+    },
+    {
+      "name": "Ação textual",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Editar ou executar uma ação secundária com passagem sublinhada.",
+      "html": "<button class=\"ds-text-button\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m14 5 5 5M4 20l5-1L20 8l-5-5L4 14v6Z\" /></svg>Editar</button>",
+      "css": ".ds-button, .ds-text-button, .ds-icon-button { cursor: pointer; } .ds-text-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-text-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-text-button { background: transparent; color: var(--blue, #154daa); padding: 8px 0; font-size: 12.9px; } .ds-text-button:hover:not(:disabled) { text-decoration: underline; text-underline-offset: 4px; } .ds-text-button.ds-danger-text, .ds-danger-text { color: var(--danger, #a62e27); } .ds-text-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-text-button:disabled { cursor: not-allowed; opacity: 0.48; } .ds-text-button svg { flex-shrink: 0; vertical-align: middle; }"
+    },
+    {
+      "name": "Ação de ícone",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Remoção de uma linha com nome acessível e ícone SVG inline.",
+      "html": "<button class=\"ds-icon-button\" type=\"button\" aria-label=\"Remover linha 1\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 6 12 12M18 6 6 18\" /></svg></button>",
+      "css": ".ds-button, .ds-text-button, .ds-icon-button { cursor: pointer; } .ds-icon-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-icon-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-icon-button { width: 40px; min-width: 40px; padding: 8px; border-radius: 4px; background: transparent; color: var(--muted, #5b6b80); } .ds-icon-button:hover:not(:disabled) { background: #e9eff7; color: var(--ink, #172a43); } .ds-icon-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-icon-button:disabled { cursor: not-allowed; opacity: 0.48; } .ds-icon-button svg { flex-shrink: 0; vertical-align: middle; }"
+    },
+    {
+      "name": "Campo rotulado",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo branco com contorno editável e foco visível, extraído do editor.",
+      "html": "<label class=\"ds-field\">Nome da receita<input class=\"ds-field-input\" name=\"recipe-title\" value=\"Arroz com abobrinha\" maxlength=\"120\" placeholder=\"Ex.: arroz com abobrinha\" /></label>",
+      "css": ".ds-field-input { font: inherit; } .ds-field { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-field { display: block; font-weight: 600; font-size: 12.9px; } .ds-field-input { display: block; width: 100%; margin-top: 7px; border: 1px solid var(--field-border, #6b819f); background: white; color: var(--ink, #172a43); border-radius: 3px; min-height: 43px; padding: 10px 11px; line-height: 1.35; box-shadow: none; } .ds-field-input::placeholder { color: #65758b; opacity: 1; } .ds-field-input:focus-visible { outline: 2px solid var(--focus, #154daa); outline-offset: 1px; } .ds-field-input:disabled { background: #eef2f7; }"
+    },
+    {
+      "name": "Navegação principal",
+      "kind": "nav",
+      "refersTo": "navigation-item",
+      "description": "Quatro destinos com ícone, estado atual e contador de planejamento; a faixa pode rolar no móvel.",
+      "html": "<header class=\"ds-app-header\"><nav aria-label=\"Navegação principal\"><button class=\"ds-nav-link\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 4h13a1 1 0 0 1 1 1v15H6a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2Z\" /><path d=\"M3 16h16M7 8h8M7 11h5\" /></svg><span>Receitas</span></button><button class=\"ds-nav-link ds-active\" type=\"button\" aria-current=\"page\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6h11M9 12h11M9 18h11M3 6h1M3 12h1M3 18h1\" /></svg><span>Planejamento e compras</span><span class=\"ds-nav-count\" aria-hidden=\"true\">2</span></button><button class=\"ds-nav-link\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 3h10v4H7zM6 7h12l2 4v9H4v-9l2-4Z\" /><path d=\"M7 13h10M7 16h7\" /></svg><span>Ingredientes</span></button><button class=\"ds-nav-link\" type=\"button\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3v12M8 11l4 4 4-4M4 16v5h16v-5\" /><path d=\"M5 7H3v6M19 7h2v6\" /></svg><span>Backup</span></button></nav></header>",
+      "css": ".ds-nav-link { font: inherit; cursor: pointer; } .ds-app-header { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-app-header { min-height: 94px; display: flex; align-items: center; gap: 35px; padding: 20px 34px; background: white; border-bottom: 1px solid var(--line, #d6e0ed); } .ds-app-header nav { display: flex; align-self: stretch; align-items: center; gap: 8px; flex: 1; } .ds-nav-link { position: relative; display: flex; align-items: center; gap: 8px; min-height: 45px; padding: 9px 12px; border: 0; background: transparent; font-size: 12.45px; font-weight: 550; color: var(--muted, #5b6b80); white-space: nowrap; border-radius: 3px; } .ds-nav-link:hover { background: #f0f4fa; color: var(--blue, #154daa); } .ds-nav-link.ds-active { background: #eaf1fc; color: var(--blue, #154daa); } .ds-nav-link.ds-active:after { content: \"\"; height: 2px; background: var(--blue, #154daa); position: absolute; bottom: -25px; left: 12px; right: 12px; } .ds-nav-count { font-size: 10.5px; min-width: 19px; line-height: 19px; text-align: center; background: #d7e5fa; color: var(--blue, #154daa); border-radius: 2px; font-variant-numeric: tabular-nums; } .ds-nav-link:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } @media (max-width: 860px) { .ds-app-header { flex-wrap: wrap; gap: 17px; padding: 17px 22px 0; } .ds-app-header nav { flex-basis: 100%; overflow-x: auto; justify-content: space-between; margin: 0 -7px; gap: 5px; padding-bottom: 10px; } .ds-nav-link { font-size: 11.55px; min-height: 39px; padding: 8px 9px; } .ds-nav-link.ds-active:after { bottom: -11px; left: 9px; right: 9px; } } @media (max-width: 640px) { .ds-app-header { padding: 15px 16px 0; gap: 14px; } .ds-app-header nav { gap: 2px; margin: 0 -4px; padding-bottom: 9px; } .ds-nav-link { padding: 8px 8px; gap: 6px; font-size: 10.5px; min-height: 39px; } .ds-nav-link svg { width: 16px; height: 16px; } .ds-nav-link:nth-child(2) span:not(.ds-nav-count) { max-width: 86px; white-space: normal; line-height: 1.2; } .ds-nav-link.ds-active:after { bottom: -10px; } .ds-nav-count { display: none; } } .ds-app-header svg { flex-shrink: 0; vertical-align: middle; }"
+    },
+    {
+      "name": "Item da biblioteca",
+      "kind": "nav",
+      "refersTo": "recipe-item-selected",
+      "description": "Nome, ID/rendimento e seta mantêm a seleção da ficha legível.",
+      "html": "<aside class=\"ds-recipe-library\"><div class=\"ds-recipe-list\"><button class=\"ds-recipe-link ds-selected\" type=\"button\" aria-current=\"true\"><span>Arroz com abobrinha</span><small>rec-1 · 4 porções</small><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-5-5 5 5-5 5\" /></svg></button><button class=\"ds-recipe-link\" type=\"button\"><span>Salada de grão-de-bico e abobrinha</span><small>rec-2 · 3 porções</small><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-5-5 5 5-5 5\" /></svg></button></div></aside>",
+      "css": ".ds-recipe-link { font: inherit; cursor: pointer; } .ds-recipe-library { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-recipe-library { background: var(--cold, #f0f4fa); padding: 27px 22px; display: flex; flex-direction: column; border-right: 1px solid var(--line, #d6e0ed); } .ds-recipe-list { margin: 22px -22px 0; } .ds-recipe-link { position: relative; border: 0; border-top: 1px solid var(--line, #d6e0ed); background: transparent; display: block; width: 100%; text-align: left; padding: 18px 35px 18px 22px; } .ds-recipe-link:last-of-type { border-bottom: 1px solid var(--line, #d6e0ed); } .ds-recipe-link > span { font-size: 13.5px; line-height: 1.4; font-weight: 600; display: block; } .ds-recipe-link > small { display: block; font-size: 10.2px; color: var(--muted, #5b6b80); margin-top: 5px; font-variant-numeric: tabular-nums; } .ds-recipe-link > svg { position: absolute; right: 14px; top: 23px; color: var(--blue, #154daa); } .ds-recipe-link.ds-selected { background: white; color: var(--blue, #154daa); } .ds-recipe-link:hover:not(:disabled) { background: #e2ebf8; } .ds-recipe-link:disabled { opacity: 0.62; } .ds-recipe-link:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } @media (max-width: 640px) { .ds-recipe-library { padding: 17px 18px 0; border-right: 0; border-bottom: 1px solid var(--line, #d6e0ed); display: grid; grid-template-columns: 1fr auto; gap: 0 15px; } .ds-recipe-list { grid-column: 1/-1; display: flex; overflow-x: auto; gap: 0; margin: 16px -18px 0; } .ds-recipe-link { flex: 0 0 190px; border: 0; border-top: 1px solid var(--line, #d6e0ed); border-right: 1px solid var(--line, #d6e0ed); padding: 13px 32px 13px 18px; min-height: 78px; } .ds-recipe-link:last-of-type { border-bottom: 0; } .ds-recipe-link > span { font-size: 11.4px; } .ds-recipe-link > small { font-size: 8.85px; } .ds-recipe-link > svg { right: 10px; top: 19px; width: 14px; } } .ds-recipe-library svg { flex-shrink: 0; vertical-align: middle; }"
+    },
+    {
+      "name": "Tabela de quantidades",
+      "kind": "custom",
+      "refersTo": "amount-table",
+      "description": "Tabela da ficha e das compras: no móvel, nome/ID ficam acima da quantidade com unidade explícita.",
+      "html": "<table class=\"ds-amount-table\" role=\"table\"><thead role=\"rowgroup\"><tr role=\"row\"><th scope=\"col\" role=\"columnheader\">Ingrediente</th><th scope=\"col\" role=\"columnheader\" class=\"ds-quantity-heading\">Quantidade</th></tr></thead><tbody role=\"rowgroup\"><tr role=\"row\"><th scope=\"row\" role=\"rowheader\"><span>Arroz</span><small>ing-1</small></th><td class=\"ds-amount-cell\" role=\"cell\"><span class=\"ds-amount-label\" aria-hidden=\"true\">Quantidade</span><span class=\"ds-amount-value\"><span class=\"ds-amount-number\">225</span><span class=\"ds-amount-unit\">g</span></span></td></tr><tr role=\"row\"><th scope=\"row\" role=\"rowheader\"><span>Azeite</span><small>ing-3</small></th><td class=\"ds-amount-cell\" role=\"cell\"><span class=\"ds-amount-label\" aria-hidden=\"true\">Quantidade</span><span class=\"ds-amount-value\"><span class=\"ds-amount-number\">≈ 39,166667</span><span class=\"ds-amount-unit\">ml</span></span></td></tr></tbody></table>",
+      "css": ".ds-amount-table { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-amount-table { border-collapse: collapse; width: 100%; table-layout: fixed; } .ds-amount-table thead th { text-align: left; font-size: 10.5px; font-weight: 550; color: var(--muted, #5b6b80); padding: 0 0 10px; border-bottom: 1px solid #a8bbd4; } .ds-amount-table thead th.ds-quantity-heading { text-align: right; width: 180px; } .ds-amount-table tbody tr { border-bottom: 1px solid var(--line, #d6e0ed); } .ds-amount-table tbody th { text-align: left; padding: 15px 12px 15px 0; font-size: 13.65px; font-weight: 500; line-height: 1.45; overflow-wrap: anywhere; } .ds-amount-table small { display: block; font-size: 9.75px; color: var(--muted, #5b6b80); font-weight: 400; margin-top: 4px; letter-spacing: 0.015em; font-variant-numeric: tabular-nums; } .ds-amount-cell { text-align: right; white-space: nowrap; padding: 12px 0 12px 10px; font-variant-numeric: tabular-nums; line-height: 1.2; } .ds-amount-label { display: none; } .ds-amount-value { display: inline-flex; align-items: baseline; max-width: 100%; } .ds-amount-number { display: inline-block; min-width: 60px; animation: ds-quantity-change 420ms cubic-bezier(0.16, 1, 0.3, 1); font-size: 18.75px; font-weight: 600; letter-spacing: -0.02em; } .ds-amount-unit { display: inline-block; width: 38px; text-align: left; margin-left: 12px; color: var(--muted, #5b6b80); font-size: 11.55px; } @keyframes ds-quantity-change { from {\n    background-color: #c9deff;\n    filter: blur(0.35px);\n  }\n  to {\n    background-color: transparent;\n    filter: blur(0);\n  } } @media (max-width: 860px) { .ds-amount-table thead th.ds-quantity-heading { width: 142px; } .ds-amount-number { font-size: 16.95px; } .ds-amount-unit { margin-left: 8px; width: 25px; font-size: 10.95px; } .ds-amount-table tbody th { font-size: 12.45px; } } @media (max-width: 640px) { .ds-amount-table, .ds-amount-table tbody { display: block; width: 100%; } .ds-amount-table thead { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; } .ds-amount-table tbody tr { display: grid; grid-template-columns: minmax(0, 1fr); gap: 9px; padding: 14px 0; } .ds-amount-table tbody th { display: block; padding: 0; font-size: 12.15px; } .ds-amount-table small { font-size: 8.85px; } .ds-amount-cell { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 5px 12px; min-width: 0; white-space: normal; padding: 0; } .ds-amount-label { display: block; color: var(--muted, #5b6b80); font-size: 9.75px; } .ds-amount-value { min-width: 0; margin-left: auto; } .ds-amount-number { font-size: 17.4px; min-width: 0; overflow-wrap: anywhere; } .ds-amount-unit { flex: 0 0 22px; font-size: 10.2px; width: 22px; margin-left: 8px; } } @media (prefers-reduced-motion: reduce) { .ds-amount-number { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }"
+    },
+    {
+      "name": "Diálogo de confirmação",
+      "kind": "custom",
+      "refersTo": "confirmation-dialog",
+      "description": "Representação estática do diálogo nativo e do resumo de importação; o foco inicial e a abertura modal são controlados pela aplicação.",
+      "html": "<dialog open class=\"ds-confirm-dialog\" aria-labelledby=\"ds-confirmation-title\"><div class=\"ds-dialog-content\"><h2 id=\"ds-confirmation-title\">Substituir todo o livro?</h2><p>O backup foi validado. Ao confirmar, os ingredientes, receitas e o planejamento atuais serão substituídos. Esta ação não mescla os livros.</p><dl class=\"ds-import-summary\"><div><dt>Ingredientes</dt><dd>6</dd></div><div><dt>Receitas</dt><dd>2</dd></div><div><dt>Planejamento</dt><dd>2</dd></div></dl><div class=\"ds-button-row\"><button class=\"ds-button ds-secondary\" type=\"button\">Cancelar</button><button class=\"ds-button ds-danger\" type=\"button\">Confirmar substituição</button></div></div></dialog>",
+      "css": ".ds-confirm-dialog { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-dialog-content h2 { font-size: 17.4px; font-weight: 650; line-height: 1.3; letter-spacing: -0.02em; } .ds-dialog-content h2, .ds-dialog-content p { margin: 0; } .ds-button-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; } .ds-confirm-dialog { max-width: 510px; width: calc(100% - 36px); border: 0; padding: 0; background: white; color: var(--ink, #172a43); border-radius: 10px; box-shadow: 0 18px 70px #172a4330; } .ds-confirm-dialog::backdrop { background: #10254075; } .ds-dialog-content { padding: 32px; } .ds-dialog-content h2 { font-size: 22.5px; letter-spacing: -0.03em; } .ds-dialog-content > p { font-size: 13.2px; line-height: 1.8; color: var(--muted, #5b6b80); margin: 17px 0 27px; overflow-wrap: anywhere; } .ds-dialog-content .ds-button-row { justify-content: flex-end; } .ds-import-summary { margin: 0 0 25px; padding: 15px; background: var(--cold, #f0f4fa); display: flex; justify-content: space-between; gap: 15px; } .ds-import-summary dt { font-size: 10.5px; color: var(--muted, #5b6b80); } .ds-import-summary dd { margin: 4px 0 0; font-size: 16.5px; font-weight: 600; font-variant-numeric: tabular-nums; } .ds-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-button { padding: 11px 17px; border-radius: 4px; font-size: 13.5px; transition: background-color 150ms ease-out; } .ds-button.ds-secondary { background: #eaf0f9; color: #17437e; } .ds-button.ds-secondary:hover:not(:disabled) { background: #dce8f8; } .ds-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-button:disabled { cursor: not-allowed; opacity: 0.48; } @media (prefers-reduced-motion: reduce) { .ds-button { animation: none !important; transition: none !important; scroll-behavior: auto !important; } } .ds-button { font-family: \"Public Sans\", sans-serif; font-size: 15px; font-weight: 400; line-height: 1.55; color: var(--ink, #172a43); } .ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; border: 0; line-height: 1.25; text-decoration: none; font-weight: 600; } .ds-button { padding: 11px 17px; border-radius: 4px; font-size: 13.5px; transition: background-color 150ms ease-out; } .ds-button.ds-danger { background: var(--danger, #a62e27); color: white; } .ds-button.ds-danger:hover { background: #87241f; } .ds-button:focus-visible { outline: 3px solid var(--focus, #154daa); outline-offset: 3px; } .ds-button:disabled { cursor: not-allowed; opacity: 0.48; } @media (prefers-reduced-motion: reduce) { .ds-button { animation: none !important; transition: none !important; scroll-behavior: auto !important; } } @media (max-width: 640px) { .ds-dialog-content { padding: 25px; } .ds-dialog-content h2 { font-size: 21px; } .ds-dialog-content > p { font-size: 12px; margin: 15px 0 23px; line-height: 1.8; } .ds-dialog-content .ds-button-row { gap: 11px; } .ds-dialog-content .ds-button { font-size: 11.1px; padding: 11px 13px; } .ds-import-summary { gap: 10px; padding: 13px; } .ds-import-summary dt { font-size: 9.45px; } .ds-import-summary dd { font-size: 15px; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Rótulo de mantimentos",
+    "overview": "A interface organiza o trabalho como uma ficha branca sobre uma bancada fria: nome, identidade, rendimento e quantidades têm lugares previsíveis. O azul dá direção às ações e à seleção; a tinta escura sustenta a leitura. A expressão está na precisão de linhas, números e unidades, com espaço suficiente para consultar a ficha enquanto se cozinha.\n\nEste registro descreve o mundo implementado em `src/App.jsx` e `src/styles.css`, confrontado com as capturas atuais em `.impeccable/review/`. O nome e a metáfora descrevem esta entrega; não constituem uma identidade de marca previamente aprovada. A composição da superfície fica no seu brief, sem transformar suas decisões locais em regras para todo produto futuro.",
+    "keyCharacteristics": [
+      "Fichas brancas, campos delimitados e separadores finos sobre superfícies frias.",
+      "Public Sans local, hierarquia compacta e números tabulares nas quantidades e identidades.",
+      "Azul funcional para ação, seleção e foco; mensagens com texto explícito e cor contextual.",
+      "Unidades separadas dos números e composição móvel que acomoda nomes e valores extensos.",
+      "Profundidade plana no trabalho diário; sombra concentrada na confirmação modal."
+    ],
+    "rules": [
+      {
+        "name": "The Field Boundary Rule",
+        "body": "Controles editáveis usam o contorno de campo; a linha de separação de conteúdo não o substitui.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stable Unit Rule",
+        "body": "Número e unidade permanecem elementos separados. A unidade tem largura reservada; um valor longo pode quebrar sem esconder sua medida ou colidir com o nome.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Workspace Rule",
+        "body": "Preserve a divisão por superfície e linha nas áreas de trabalho; reserve a sombra existente para o diálogo de confirmação.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** conservar nome, ID, valor e unidade como informações distintas e legíveis.",
+      "**Do** usar o contorno de campo em todos os controles editáveis, incluindo busca e rendimento.",
+      "**Do** preservar hierarquia de botões, foco visível e mensagens textuais junto dos estados.",
+      "**Do** separar nome/ID e quantidade/unidade no móvel, permitindo quebra de valores extensos.",
+      "**Do** manter o símbolo de aproximação, a nota de precisão e o suporte a movimento reduzido."
+    ],
+    "donts": [
+      "**Don't** substituir a borda editável pela linha clara usada como separador.",
+      "**Don't** truncar quantidades ou unidades para manter uma linha visual curta.",
+      "**Don't** acrescentar sombras recorrentes às áreas de trabalho planas.",
+      "**Don't** comunicar erro, seleção ou indisponibilidade apenas por cor.",
+      "**Don't** tratar tamanhos da abertura vazia como tipografia padrão de todas as fichas."
+    ]
+  }
+}

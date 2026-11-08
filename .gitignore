@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.test-build/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+*.log
+.DS_Store
+.env
+.env.*

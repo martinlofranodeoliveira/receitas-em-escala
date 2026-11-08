@@ -1,0 +1,35 @@
+{
+  "name": "receitas-em-escala",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2",
+    "vite": "8.0.13"
+  },
+  "description": "Receitas e planejamento de porções com cálculos exatos, lista de compras e backup JSON local.",
+  "license": "MIT",
+  "author": "Martin Lofrano — LOFRANO TECNOLOGIA",
+  "homepage": "https://martinlofranodeoliveira.github.io/receitas-em-escala/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinlofranodeoliveira/receitas-em-escala.git"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vite build --configLoader native --ssr src/App.jsx --outDir .test-build && node --test --test-concurrency=1 tests/*.test.*",
+    "check:offline": "python3 -B scripts/check-offline.py"
+  }
+}

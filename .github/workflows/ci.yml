@@ -1,0 +1,51 @@
+name: Testes e demonstração
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Preparar dependências fora da execução dos testes
+        run: |
+          npm ci --ignore-scripts
+          sudo apt-get update -qq
+          sudo apt-get install -y bubblewrap util-linux
+      - name: Verificar fonte somente leitura e build sem rede
+        run: sudo python3 -B scripts/check-offline.py --node "$(command -v node)" --deps "$PWD/node_modules"
+      - uses: actions/upload-pages-artifact@v3
+        if: matrix.node == 24 && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          path: dist
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Publicar demonstração estática
+        id: deployment
+        uses: actions/deploy-pages@v4
